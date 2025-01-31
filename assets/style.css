@@ -170,61 +170,33 @@ h2 {
     text-decoration: underline;
 }
 
-/* Responsive Design */
+/* Responsive Design for Counter */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
     .flip-card {
-        width: 80px;
-        height: 120px;
+        width: 60px; 
+        height: 90px; 
     }
 
     .flip-card-front, .flip-card-back {
-        font-size: 60px;
+        font-size: 40px; 
     }
 
-    .news-articles {
-        max-height: 250px; 
-    }
-
-    #news-list a {
-        font-size: 1em;
-    }
-
-    .container {
-        margin-bottom: 20px;
+    #counter {
+        gap: 5px; 
     }
 }
 
 @media (max-width: 480px) {
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    h2 {
-        font-size: 1.2rem;
-    }
-
     .flip-card {
-        width: 60px;
-        height: 90px;
+        width: 50px;
+        height: 75px; 
     }
 
     .flip-card-front, .flip-card-back {
-        font-size: 40px;
+        font-size: 30px; 
     }
 
-    .news-articles {
-        max-height: 200px; 
-    }
-
-    #news-list li {
-        padding: 10px;
+    #counter {
+        gap: 3px;
     }
 }
