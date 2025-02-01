@@ -13,8 +13,8 @@ function createCounter(targetCount) {
         } else {
             const flipCard = document.createElement('div');
             flipCard.classList.add('flip-card');
-            flipCard.style.width = '80px'; // Adjust width
-            flipCard.style.height = '120px'; // Adjust height
+            flipCard.style.width = '80px'; // Default width
+            flipCard.style.height = '120px'; // Default height
 
             const flipCardInner = document.createElement('div');
             flipCardInner.classList.add('flip-card-inner');
@@ -22,12 +22,12 @@ function createCounter(targetCount) {
             const flipCardFront = document.createElement('div');
             flipCardFront.classList.add('flip-card-front');
             flipCardFront.textContent = char;
-            flipCardFront.style.fontSize = '60px'; // Adjust font size
+            flipCardFront.style.fontSize = '60px'; // Default font size
 
             const flipCardBack = document.createElement('div');
             flipCardBack.classList.add('flip-card-back');
             flipCardBack.textContent = char; 
-            flipCardBack.style.fontSize = '60px'; // Adjust font size
+            flipCardBack.style.fontSize = '60px'; // Default font size
 
             flipCardInner.appendChild(flipCardFront);
             flipCardInner.appendChild(flipCardBack);
@@ -46,6 +46,27 @@ function createCounter(targetCount) {
         comma.style.fontSize = '60px';
         comma.style.margin = '0 10px';
     });
+
+    // Responsive adjustments
+    function adjustFlipCardSize() {
+        const screenWidth = window.innerWidth;
+        document.querySelectorAll('.flip-card').forEach(flipCard => {
+            if (screenWidth < 768) {
+                flipCard.style.width = '60px';
+                flipCard.style.height = '90px';
+                flipCard.querySelector('.flip-card-front').style.fontSize = '40px';
+                flipCard.querySelector('.flip-card-back').style.fontSize = '40px';
+            } else {
+                flipCard.style.width = '80px';
+                flipCard.style.height = '120px';
+                flipCard.querySelector('.flip-card-front').style.fontSize = '60px';
+                flipCard.querySelector('.flip-card-back').style.fontSize = '60px';
+            }
+        });
+    }
+
+    window.addEventListener('resize', adjustFlipCardSize);
+    adjustFlipCardSize();
 }
 
 // Function to load news articles from JSON
