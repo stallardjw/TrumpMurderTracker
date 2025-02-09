@@ -93,5 +93,5 @@ function loadNewsArticles() {
 }
 
 // Initialize the page
-createCounter(1219571);
+createCounter(1219581);
 loadNewsArticles();
